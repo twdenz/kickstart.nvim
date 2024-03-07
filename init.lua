@@ -99,7 +99,7 @@ vim.g.maplocalleader = ' '
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -161,6 +161,9 @@ vim.keymap.set('i', 'kj', '<Esc>')
 -- Set the key to go from inser to normal mode
 vim.keymap.set('n', '<leader>e', ':e $MYVIMRC<CR>')
 
+-- Set the key to go from inser to normal mode
+vim.keymap.set('n', '<C-c>', ':q!<CR>')
+
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -196,7 +199,7 @@ function insert_current_date()
   vim.api.nvim_put({ current_date }, 'c', true, true)
 end
 
--- Create a keymap for the function
+-- Create a keymap for the function to insert the current date
 vim.api.nvim_set_keymap('n', '<leader>d', ':lua insert_current_date()<CR>', { noremap = true, silent = true })
 --
 -- [[ Basic Autocommands ]]
