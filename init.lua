@@ -164,6 +164,10 @@ vim.keymap.set('n', '<leader>e', ':e $MYVIMRC<CR>')
 -- Set the key to go from inser to normal mode
 vim.keymap.set('n', '<C-c>', ':q!<CR>')
 
+-- Move lines around easily
+vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
