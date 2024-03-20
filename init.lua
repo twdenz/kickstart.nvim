@@ -164,6 +164,9 @@ vim.keymap.set('n', '<leader>e', ':e $MYVIMRC<CR>')
 -- Set the key to go from inser to normal mode
 vim.keymap.set('n', '<C-c>', ':q!<CR>')
 
+-- Format JSON file
+vim.keymap.set('n', '<leader>j', ':%!jq .<CR>')
+
 -- Move lines around easily
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
